@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Textarea</title>
+  <style>
+    @font-face {
+      font-family: 'AiMirai';
+      src: url('AiMirai.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'AiMirai', sans-serif;
+      background-color: #f5faff;
+    }
+
+    textarea {
+      width: 100%;
+      height: 77vh;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #a8d8ff;
+      border-radius: 10px;
+      background-color: #d7f0ff;
+      resize: vertical;
+      box-sizing: border-box;
+      font-family: 'AiMirai', sans-serif;
+      direction: auto;
+    }
+
+    @media (max-width: 768px) {
+      textarea {
+        height: 120px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      textarea {
+        height: 100px;
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+    }
+	
+	p, div {
+		border-top: 1px solid blue;
+	}
+  </style>
+</head>
+<body>
+
+  <h2>Textarea Responsif</h2>
+  <textarea dir="auto" placeholder="Tulis sesuatu..."></textarea>
+  <div dir="auto" placeholder="Tulis sesuatu..." contenteditable></div>
+
+</body>
+</html>
