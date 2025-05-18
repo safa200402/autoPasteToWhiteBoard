@@ -2,6 +2,7 @@ git status
 git add .
 git commit -m "Pesan commit"
 git push
+git push --force
 
 pyinstaller --onefile --windowed ambil_clipboard.py
 
