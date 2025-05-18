@@ -4,7 +4,7 @@ git commit -m "Pesan commit"
 git push
 git push --force
 
-pyinstaller --onefile --windowed ambil_clipboard.py
+pyinstaller --onefile --windowed Mengambil_langsung_dari_clipboard_(berhasil).py
 
 git init
 git add .
