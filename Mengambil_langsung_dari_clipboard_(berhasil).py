@@ -1,17 +1,20 @@
 import tkinter as tk
-from tkinter import scrolledtext
+from tkinter import scrolledtext, messagebox
 import pyperclip
 import threading
 import time
 
 clipboard_history = []
 a = True
+remove_newlines = False  # akan diatur lewat prompt
 
 def monitor_clipboard():    
     last_text = ""
     while True:
         try:
             current_text = pyperclip.paste()
+            if remove_newlines:
+                current_text = current_text.replace("\n", " ")
             if current_text != last_text and current_text.strip() != "":
                 last_text = current_text
                 clipboard_history.insert(0, current_text)
@@ -41,6 +44,12 @@ def clear_clipboard():
 root = tk.Tk()
 root.title("Riwayat Clipboard")
 root.geometry("500x400")
+
+# Prompt pengguna
+remove_newlines = messagebox.askyesno(
+    "Hapus Newline?",
+    "Apakah nantinya anda ingin menghapus karakter baris baru (\\n) dari setiap teks yang disalin?"
+)
 
 # Label atas
 label = tk.Label(root, text="Riwayat Clipboard (otomatis merekam teks):")
